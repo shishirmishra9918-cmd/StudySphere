@@ -1,0 +1,11 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.php [QSA,L]
+
+# Set maximum file upload size
+php_value upload_max_filesize 20M
+php_value post_max_size 21M
+
+# Enable CORS
+Header set Access-Control-Allow-Origin "*"
